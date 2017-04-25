@@ -11,7 +11,7 @@ Table of Contents
 Usage
 Requirements
 Development
-Installing Dependencies
+Installing  Dependencies
 Tasks
 Team
 Contributing
