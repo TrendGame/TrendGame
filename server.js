@@ -13,3 +13,11 @@ app.use(morgan('tiny'));
 app.listen(PORT, () => {
   console.log(`Listening on ${IP}:${PORT}`);
 });
+
+app.get('/api', (req, res) => {
+  res.send({
+    version: '0.0.1'
+  });
+});
+
+module.exports = app;

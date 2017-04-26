@@ -6,8 +6,9 @@
   "scripts": {
     "dev": "webpack -d --watch",
     "build": "webpack -p",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "mocha '**/*.spec.js'",
+    "start": "node server.js",
+    "start:watch": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -25,6 +26,9 @@
     "babel-loader": "^7.0.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
+    "chai": "^3.5.0",
+    "mocha": "^3.3.0",
+    "supertest": "^3.0.0",
     "nodemon": "^1.11.0",
     "webpack": "^2.4.1"
   },
