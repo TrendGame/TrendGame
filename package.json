@@ -7,7 +7,7 @@
     "dev": "webpack -d --watch",
     "build": "webpack -p",
     "test": "mocha '**/*.spec.js'",
-    "start": "node server.js",
+    "start": "webpack -p && node server.js",
     "start:watch": "nodemon server.js"
   },
   "repository": {
