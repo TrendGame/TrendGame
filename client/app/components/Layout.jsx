@@ -1,6 +1,6 @@
 import React from 'react';
-import {render} from 'react-dom';
 
+import Body from './Body.jsx'
 import Footer from './Footer.jsx';
 import Header from './Header.jsx';
 
@@ -9,8 +9,9 @@ export default class Layout extends React.Component {
     return (
       <div>
         <Header/>
+        <Body/>
         <Footer/>
-    </div>
+      </div>
     );
   }
 }
