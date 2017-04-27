@@ -1,4 +1,4 @@
-// Query for 16 months of "Hillary Clinton" would return the following
+// Query for 16 months of 'Hillary Clinton' would return the following
 
 const timelineData = [
   {
@@ -443,8 +443,7 @@ const timelineData = [
     'time': 1492905600,
     'formattedTime': 'Apr 23 - Apr 29 2017',
     'formattedAxisTime': 'Apr 23, 2017',
-    'value': 1,
-    'isPartial': true
+    'value': 1
   }
 ];
 

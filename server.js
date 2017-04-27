@@ -1,3 +1,5 @@
+const trendQuery = require('./utilities/trendQuery');
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
@@ -13,6 +15,7 @@ app.use(morgan('tiny'));
 if (!module.parent) {
   app.listen(PORT, () => {
     console.log(`Listening on ${IP}:${PORT}`);
+    // trendQuery('turtles');
   });
 }
 
