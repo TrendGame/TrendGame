@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack -d --watch",
     "build": "webpack -p",
-    "test": "mocha '**/*.spec.js'",
+    "test": "mocha './integration-tests/*.spec.js'",
     "start": "webpack -p && node server.js",
     "start:watch": "nodemon server.js"
   },
