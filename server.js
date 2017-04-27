@@ -20,4 +20,9 @@ app.get('/api', (req, res) => {
   });
 });
 
+app.post('/', (req, res) => {
+  // req: user query
+  // res: query response
+});
+
 module.exports = app;
