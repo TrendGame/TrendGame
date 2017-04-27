@@ -18,6 +18,9 @@ var config = {
        loader : 'babel-loader'
      }
    ]
+ },
+ resolve: {
+  extensions: ['.js', '.json', '.jsx']
  }
 };
 

@@ -1,8 +1,8 @@
 import React from 'react';
 
 
-import Chart from './Chart.jsx';
-import Input from './Input.jsx';
+import Chart from './Chart';
+import Input from './Input';
 
 export default class Body extends React.Component {
   render () {
