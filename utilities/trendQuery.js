@@ -9,7 +9,6 @@ const trendQuery = (keyword, callback) => {
 
   googleTrends.interestOverTime(options)
   .then((results) => {
-    console.log(results)
     callback(results);
   })
   .catch((err) => {
