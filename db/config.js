@@ -1,14 +1,21 @@
 var serverUrl = '127.0.0.1';
+var connection = {
+  host: serverUrl,
+  user: 'root',
+  password: '',
+  charset: 'uft8'
+};
 var knex = require('knex')({
-  client: 'sql',
-  connection: {
-    host: serverUrl,
-    user: 'root',
-    password: '',
-    database: './database.sql'
-  },
+  client: 'mysql',
+  connection: connection,
   useNullAsDefault: true
 });
+knex.raw('CREATE DATABASE IF NOT EXISTS trendNewsDB')
+  .then(function() {
+    knex.destroy();
+  });
+connection.database = 'trendNewsDB';
+knex = require('knex')({ client: 'mysql', connection: connection });
 var db = require('bookshelf')(knex);
 db.knex.schema.hasTable('trends').then(function(exists) {
   if (!exists) {
