@@ -12,10 +12,10 @@ var knex = require('knex')({
   useNullAsDefault: true
 });
 knex.raw('CREATE DATABASE IF NOT EXISTS trendNewsDB')
-  .then(function() {
+  .then(function () {
     connection.database = 'trendNewsDB';
     knex = require('knex')({ client: 'mysql', connection: connection });
-  }).catch(function(err) {
+  }).catch(function (err) {
     console.log(err);
   });
 connection.database = 'trendNewsDB';
