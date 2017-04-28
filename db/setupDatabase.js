@@ -20,5 +20,4 @@ knex.raw('CREATE DATABASE IF NOT EXISTS trendNewsDB')
   });
 connection.database = 'trendNewsDB';
 knex = require('knex')({ client: 'mysql', connection: connection });
-
 module.exports = knex;

@@ -15,7 +15,6 @@ app.use(morgan('tiny'));
 if (!module.parent) {
   app.listen(PORT, () => {
     console.log(`Listening on ${IP}:${PORT}`);
-    // trendQuery('turtles');
   });
 }
 
@@ -26,8 +25,9 @@ app.get('/api', (req, res) => {
 });
 
 app.post('/', (req, res) => {
-  // req: user query
-  // res: query response
+  trendQuery(req.body.keyword, (results) => {
+    res.send(results);
+  });
 });
 
 module.exports = app;
