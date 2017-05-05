@@ -6,6 +6,7 @@ var sinon = require('sinon');
 // Utility methods
 var backDate = require('../utilities/backDate');
 var sanitizeTrend = require('../utilities/sanitizeTrend');
+var trendQuery = require('../utilities/trendQuery');
 
 // Fixtures
 var trendRaw = require('./fixtures/trend-raw.json');
@@ -23,8 +24,17 @@ describe('Backdate By Months', () => {
 
 describe('Sanitize Google Trends results', () => {
   it('should convert JSON to formatted array', () => {
-    var actual = sanitizeTrend(trendRaw);
+    // googleTrends.interestOvertime returns a stringified JSON
+    // but we stored it in the fixtures as a JSON for readability
+    // so we are stringifying it here to match behavior in the wild
+    var actual = sanitizeTrend(JSON.stringify(trendRaw));
     var expected = trendSanitized;
     expect(actual).to.deep.equal(expected);
+  });
+});
+
+xdescribe('Integration test for Google Trends', () => {
+  it('should take a keyword and callback for google trends queries', () => {
+
   });
 });

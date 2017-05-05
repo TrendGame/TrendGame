@@ -1,5 +1,5 @@
 const sanitizeTrend = (rawTimeline) => {
-  return rawTimeline.default.timelineData.map((point) => {
+  return JSON.parse(rawTimeline).default.timelineData.map((point) => {
     return {
       time: parseInt(point.time),
       formattedTime: point.formattedTime,
