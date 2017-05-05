@@ -3,6 +3,12 @@
   "scripts": {
   },
   "env": {
+    "AYLIEN_ID": {
+      "required": true
+    },
+    "AYLIEN_KEY": {
+      "required": true
+    }
   },
   "formation": {
   },

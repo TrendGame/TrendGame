@@ -7,13 +7,17 @@ const expect = chai.expect;
 const apiInstance = new AylienNewsApi.DefaultApi();
 
 try {
-  const apiInfo = require('../lib/env/aylienApiKeys');
+  try {
+    const apiInfo = require('../lib/env/aylienApiKeys');
+  } catch (e) {
+    const apiInfo = {};
+  }
 
   let appId = apiInstance.apiClient.authentications['app_id'];
-  appId.apiKey = apiInfo.id;
+  appId.apiKey = AYLIEN_ID || apiInfo.id;
 
   let appKey = apiInstance.apiClient.authentications['app_key'];
-  appKey.apiKey = apiInfo.key;
+  appKey.apiKey = AYLIEN_KEY || apiInfo.key;
 } catch (e) {
   console.log(e);
 }
