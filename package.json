@@ -30,6 +30,7 @@
     "body-parser": "^1.17.1",
     "bookshelf": "^0.10.3",
     "chai": "^3.5.0",
+    "epoch.js": "^0.4.4",
     "express": "^4.15.2",
     "google-trends-api": "^4.1.0",
     "knex": "^0.12.9",

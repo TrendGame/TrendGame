@@ -12,7 +12,9 @@ const formatAylienData = (data) => {
     let formattedStory = {};
     formattedStory.headline = story.title;
     formattedStory.url = story.links.permalink;
-    formattedStory.media = story.media[0].url;
+    if (story.media && story.media.length > 0) {
+      formattedStory.media = story.media[0].url;
+    }
     formattedStory.summary = story.summary.sentences[0];
     return formattedStory;
   });
