@@ -55,7 +55,7 @@ const getStories = (queryString, peaks, callback) => {
       const formattedStories = formatStories(data);
       let finalData = [];
       finalData.push({
-        date: peakDate,
+        date: peaks[0][0],
         stories: formattedStories
       });
 

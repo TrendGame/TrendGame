@@ -4,14 +4,22 @@ const getNews = require('./aylienApi');
 const makeFinalData = require('./stitchData');
 
 const makeTimeline = (searchString, callback) => {
-  queryTrend(searchString, (timeSeries) => {
-    const peaks = findPeaks(timeSeries);
+  queryTrend(searchString, (err, timeSeries) => {
+    if (err) {
+      callback(err, null);
+    } else {
+      const peaks = findPeaks(timeSeries);
 
-    getNews(searchString, peaks, (peakStories) => {
-      const timeline = makeFinalData(timeSeries, peakStories);
+      getNews(searchString, peaks, (err, peakStories) => {
+        if (err) {
+          callback(err, null);
+        } else {
+          const timeline = makeFinalData(timeSeries, peakStories);
 
-      callback(timeline);
-    });
+          callback(null, timeline);
+        }
+      });
+    }
   });
 };
 
