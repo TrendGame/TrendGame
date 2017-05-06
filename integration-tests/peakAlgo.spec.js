@@ -6,8 +6,8 @@ var dummyData = require('./fixtures/trend-sanitized');
 
 var expect = chai.expect;
 
-describe('Peak Algo', () => {
-  it('should return peak value and associated date as a tuple in an array', () => {
+describe('Peak Algo', function() {
+  it('should return peak value and associated date as a tuple in an array', function() {
     var expected = [[1464480000, 100]];
     var actual = findPeak(dummyData);
 

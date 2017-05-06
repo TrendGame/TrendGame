@@ -23,6 +23,6 @@ try {
 }
 
 
-xdescribe('Aylien API', () => {
+xdescribe('Aylien API', function() {
 
 });
