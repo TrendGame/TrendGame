@@ -16,7 +16,7 @@ db.knex.schema.hasTable('weeks').then(function (exists) {
     db.knex.schema.createTable('weeks', function (week) {
       week.increments('id').primary();
       week.string('startDate');
-      week.integer('intensity');
+      week.integer('popularity');
       week.integer('trendId').unsigned();
       week.foreign('trendId').references('trends.id');
     }).then(function (table) {
