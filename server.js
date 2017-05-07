@@ -27,9 +27,9 @@ app.get('/api', (req, res) => {
 app.get('/api/timeline', (req, res) => {
   makeTimeline(req.query.q, (err, data) => {
     if (err) {
-      res.status(500).send('Error:', err);
+      res.status(500).send(err);
     } else {
-      res.send(data);
+      res.status(200).send(data);
     }
   });
 });

@@ -24,14 +24,14 @@ const getStories = (queryString, peaks, callback) => {
 
   let appId = apiInstance.apiClient.authentications['app_id'];
   try {
-    appId.apiKey = AYLIEN_ID;
+    appId.apiKey = process.env.AYLIEN_ID;
   } catch (e) {
     appId.apiKey = apiInfo.id;
   }
 
   let appKey = apiInstance.apiClient.authentications['app_key'];
   try {
-    appKey.apiKey = AYLIEN_KEY;
+    appKey.apiKey = process.env.AYLIEN_KEY;
   } catch (e) {
     appKey.apiKey = apiInfo.key;
   }
