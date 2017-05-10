@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/TrendGame/TrendGame#readme",
   "dependencies": {
+    "axios": "^0.16.1",
     "aylien-news-api": "^2.0.2",
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
