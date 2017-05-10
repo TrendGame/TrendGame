@@ -1,20 +1,17 @@
 import React from 'react';
-import { Chart } from 'react-google-charts'
+import { Chart } from 'react-google-charts';
 
 export default class TrendChart extends React.Component {
-  constructor(props){
-    super(props);
-
-  }
   render () {
+    let { data, trend, start, end } = this.props.chartData;
     return (
       <div>
         <Chart
           chartType="LineChart"
-          data = {this.props.chartData}
-          options = {{
-            title: this.props.trend,
-            hAxis: { title: 'Date', minValue: this.props.start, maxValue: this.props.end },
+          data={data}
+          options={{
+            title: trend,
+            hAxis: { title: 'Date', minValue: start, maxValue: end },
             vAxis: { title: 'Popularity', minValue: 0, maxValue: 100 },
             legend: 'none'
           }}
