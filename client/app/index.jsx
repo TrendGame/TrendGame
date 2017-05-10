@@ -11,39 +11,37 @@ class App extends React.Component {
       data: [],
       start: '',
       end: '',
-      trend: ''
+      trend: '',
+      storyPoint: {}
     };
     this.collectData = this.collectData.bind(this);
   }
 
   collectData(trend) {
-    this.setState({trend: trend});
     axios.get('/api/timeline', {
-      params: {
-        q: trend
-      }
-     })
-    .then( response => {
-      console.log("This is the reponse!", response.data);
-      var dataTuple = [];
-      dataTuple.push(['Date', 'Popularity']);
-      for (var i = 0; i < response.data.length; i++) {
-        dataTuple.push( [response.data[i].date, response.data[i].popularity] );
-        if (i === 0) {
-          this.setState({start: response.data[i].date});
-        }
-        if (i === response.data.length - 1) {
-          this.setState({end: response.data[i].date});
-        }
-      }
-      console.log("This is the dataTuple", dataTuple);
-      this.setState({data: dataTuple});
-      console.log(this.state.start, this.state.end, this.state.data);
+      params: { q: trend }
     })
-    .catch(function (error) {
-      console.log(error);
+    .then(response => {
+      let timeline = response.data;
+      this.setState({
+        trend: trend,
+        start: timeline[0].date,
+        end: timeline[timeline.length - 1].date,
+        storyPoint: this.findStoryPoint(timeline),
+        data: this.makeChartPoints(timeline)
+      });
+    })
+    .catch(error => {
+      console.error(error);
     });
-    console.log(trend);
+  }
+
+  makeChartPoints (timeline) {
+    let dataTuple = [['Date', 'Popularity']];
+    timeline.forEach(point => {
+      dataTuple.push( [point.date, point.popularity] );
+    });
+    return dataTuple;
   }
 
   findStoryPoint (timeline) {
@@ -56,11 +54,11 @@ class App extends React.Component {
 
   render () {
     return (
-        <Layout
-          chartData={this.state}
-          collectData={this.collectData}
-          storyPoint={this.findStoryPoint(data)}
-        />
+      <Layout
+        chartData={this.state}
+        collectData={this.collectData}
+        storyPoint={this.state.storyPoint}
+      />
     );
   }
 }
