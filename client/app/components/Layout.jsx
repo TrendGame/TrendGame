@@ -8,7 +8,11 @@ export default class Layout extends React.Component {
     return (
       <div>
         <Header/>
-        <Body chartData = {this.props.chartData} collectData={this.props.collectData}/>
+        <Body
+          chartData={this.props.chartData}
+          collectData={this.props.collectData}
+          storyPoint={this.props.storyPoint}
+        />
         <Footer/>
       </div>
     );

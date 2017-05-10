@@ -1,10 +1,18 @@
 import React from 'react';
 import Article from './Article.jsx';
 
-export default class ArticleList extends React.Component {
-  render () {
-    return (
-      <Article/>
-    );
-  }
-}
+const ArticleList = ({ storyPoint }) => {
+  let { formattedTime, stories } = storyPoint;
+  return (
+    <div>
+      <h2>Top news stories for {formattedTime}</h2>
+      {
+        stories.map(story => {
+          return <Article key={story.url} story={story}/>;
+        })
+      }
+    </div>
+  );
+};
+
+export default ArticleList;

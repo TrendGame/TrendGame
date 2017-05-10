@@ -11,7 +11,7 @@ export default class Body extends React.Component {
         <Input collectData={this.props.collectData}/>
         <h1></h1>
         <TrendChart chartData={this.props.chartData}/>
-        <ArticleList/>
+        <ArticleList storyPoint={this.props.storyPoint}/>
       </div>
     );
   }

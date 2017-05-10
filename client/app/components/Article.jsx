@@ -1,9 +1,15 @@
 import React from 'react';
 
-export default class Article extends React.Component {
-  render () {
-    return (
-      <h3>ARTICLE PLACEHOLDER</h3>
-    );
-  }
-}
+const Article = ({ story }) => {
+  let { headline, url, media, summary } = story;
+
+  return (
+    <div>
+      <h3><a href={url}>{headline}</a></h3>
+      <img src={media} alt={headline}/>
+      <p>{summary}</p>
+    </div>
+  );
+};
+
+export default Article;

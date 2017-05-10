@@ -34,9 +34,21 @@ class App extends React.Component {
     console.log(trend);
   }
 
+  findStoryPoint (timeline) {
+    for (let point of timeline) {
+      if ('stories' in point) {
+        return point;
+      }
+    }
+  }
+
   render () {
     return (
-        <Layout chartData={this.state} collectData={this.collectData}/>
+        <Layout
+          chartData={this.state}
+          collectData={this.collectData}
+          storyPoint={this.findStoryPoint(data)}
+        />
     );
   }
 }
