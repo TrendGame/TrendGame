@@ -1,30 +1,42 @@
 import React from 'react';
 import {render} from 'react-dom';
+import data from './dummyData';
 import Layout from './components/Layout'
 
 class App extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      data: [
-        ['Date', 'Popularity'],
-        [0,0],
-        [10,10],
-        [20,20],
-        [30,20],
-        [40,50],
-        [50,20],
-        [60,60],
-        [70,20],
-        [80,40],
-        [90,50],
-        [100,60]
-      ]
+      data: [],
+      start: "",
+      end: "",
+      trend: ""
     };
+    this.collectData = this.collectData.bind(this);
   }
+
+  collectData(trend){
+    this.setState({trend: trend});
+    var dataTuple = [];
+    dataTuple.push(['Date', 'Popularity'])
+    for(var i = 0; i < data.length; i++){
+      dataTuple.push( [data[i].date, data[i].popularity] );
+      if(i === 0){
+        this.setState({start : data[i].date})
+      }
+      if(i === data.length-1){
+        this.setState({end : data[i].date})
+      }
+    }
+    this.setState({data: dataTuple});
+    console.log(this.state.start, this.state.end, this.state.data);
+
+    console.log(trend);
+  }
+
   render () {
     return (
-        <Layout chartData = {this.state.data}/>
+        <Layout chartData={this.state.data} trend={this.state.trend} start={this.state.start} end={this.state.end} collectData={this.collectData}/>
     );
   }
 }

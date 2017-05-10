@@ -11,9 +11,9 @@ export default class Body extends React.Component {
     return (
       <div>
         <h2>This is the Body</h2>
-        <Input/>
+        <Input collectData={this.props.collectData}/>
         <h1></h1>
-        <TrendChart chartData = {this.props.chartData}/>
+        <TrendChart chartData = {this.props.chartData} trend={this.props.trend} start={this.props.start} end={this.props.end}/>
         <ArticleList/>
       </div>
     );
