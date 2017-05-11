@@ -1,0 +1,23 @@
+module.exports = [
+  'puppers',
+  'corgis',
+  'lemonade',
+  'hotdogs',
+  'america',
+  'hillary clinton',
+  'craft beer',
+  'hops',
+  'IPA',
+  'third wave coffee',
+  'blue bottle',
+  'tupac',
+  'coachella',
+  'fyre festival',
+  'kouign amann',
+  'maple syrup',
+  'pancakes',
+  'FDA',
+  'police',
+  'siri',
+  'alexa'
+];

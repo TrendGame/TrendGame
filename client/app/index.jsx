@@ -2,6 +2,8 @@ import React from 'react';
 import {render} from 'react-dom';
 import axios from 'axios';
 import Layout from './components/Layout';
+// Fixture scaffolding for history components
+import historyList from '../../tests/fixtures/history';
 
 class App extends React.Component {
   constructor(props) {
@@ -11,7 +13,8 @@ class App extends React.Component {
       start: '',
       end: '',
       trend: '',
-      storyPoint: {}
+      storyPoint: {},
+      history: historyList
     };
     this.collectData = this.collectData.bind(this);
   }
@@ -57,6 +60,7 @@ class App extends React.Component {
         chartData={this.state}
         collectData={this.collectData}
         storyPoint={this.state.storyPoint}
+        history={this.state.history}
       />
     );
   }

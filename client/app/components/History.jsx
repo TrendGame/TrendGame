@@ -1,12 +1,14 @@
 import React from 'react';
+import HistoryItem from './HistoryItem';
 
-const History = (props) => {
+const History = ({ history }) => {
   return (
     <div>
-      <h2>History goes here</h2>
+      <h2>Search History</h2>
       <ul>
-        <li>corgis</li>
-        <li>puppers</li>
+        {history.map(term => {
+          return <HistoryItem key={term} term={term}/>;
+        })}
       </ul>
     </div>
   );

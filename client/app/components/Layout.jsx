@@ -9,7 +9,7 @@ export default class Layout extends React.Component {
     return (
       <div>
         <Header/>
-        <History/>
+        <History history={this.props.history}/>
         <Body
           chartData={this.props.chartData}
           collectData={this.props.collectData}
