@@ -21,10 +21,14 @@ class App extends React.Component {
     this.collectData = this.collectData.bind(this);
   }
 
+  componentDidMount() {
+    this.getSearchHistory();
+  }
+
   collectData(trend) {
     this.setState({
-    loader: <Loader color="#26A65B" size="16px" margin="4px"/>,
-    storyPoint: {}
+      loader: <Loader color="#26A65B" size="16px" margin="4px"/>,
+      storyPoint: {}
     });
     axios.get('/api/timeline', {
       params: { q: trend }
@@ -59,6 +63,15 @@ class App extends React.Component {
         return point;
       }
     }
+  }
+
+  getSearchHistory() {
+    axios.get('/api/history')
+      .then(response => {
+        this.setState({
+          history: response.data
+        });
+      });
   }
 
   render () {
