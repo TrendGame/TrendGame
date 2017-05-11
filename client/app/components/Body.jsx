@@ -6,7 +6,7 @@ import ArticleList from './ArticleList';
 export default class Body extends React.Component {
   render () {
     return (
-      <div>
+      <div className="col-9">
         <h2>This is the Body</h2>
         <Input collectData={this.props.collectData}/>
         <h1></h1>

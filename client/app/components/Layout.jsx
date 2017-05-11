@@ -6,14 +6,16 @@ import History from './History';
 
 const Layout = (props) => {
   return (
-    <div>
+    <div className="container">
       <Header/>
-      <History history={props.history}/>
-      <Body
-        chartData={props.chartData}
-        collectData={props.collectData}
-        storyPoint={props.storyPoint}
-      />
+      <div className="row">
+        <History history={props.history}/>
+        <Body
+          chartData={props.chartData}
+          collectData={props.collectData}
+          storyPoint={props.storyPoint}
+        />
+      </div>
       <Footer/>
     </div>
   );
