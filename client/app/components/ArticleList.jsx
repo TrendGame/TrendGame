@@ -6,7 +6,7 @@ const ArticleList = ({ storyPoint }) => {
 
   if (storyPoint.hasOwnProperty('stories') && storyPoint.stories[0] === null) {
     articles = <div>
-      <h2>No stories found for this trend.</h2>
+      <h2>No stories on this trend found for {storyPoint.formattedTime}.</h2>
     </div>;
   } else if (storyPoint.hasOwnProperty('stories')) {
     articles = (
