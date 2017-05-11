@@ -1,4 +1,5 @@
 const makeTimeline = require('./utilities/makeTimeline');
+const queries = require('./db/queries');
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -35,11 +36,23 @@ app.get('/api/timeline', (req, res) => {
 });
 
 app.post('/api/history', (req, res) => {
-  // post to db here
+  queries.insertSearch(req.body, (err, resp) => {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.status(200).send(resp);
+    }
+  });
 });
 
 app.get('/api/history', (req, res) => {
-  // get from db here
+  queries.getSearches(10, (err, data) => {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.status(200).send(data);
+    }
+  });
 });
 
 module.exports = app;
