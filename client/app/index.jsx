@@ -2,8 +2,9 @@ import React from 'react';
 import {render} from 'react-dom';
 import axios from 'axios';
 import Layout from './components/Layout';
-// Fixture scaffolding for history components
+var Loader = require('halogen/PulseLoader');
 import historyList from '../../tests/fixtures/history';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -14,12 +15,17 @@ class App extends React.Component {
       end: '',
       trend: '',
       storyPoint: {},
+      loader: false,
       history: historyList
     };
     this.collectData = this.collectData.bind(this);
   }
 
   collectData(trend) {
+    this.setState({
+    loader: <Loader color="#26A65B" size="16px" margin="4px"/>,
+    storyPoint: {}
+    });
     axios.get('/api/timeline', {
       params: { q: trend }
     })
@@ -30,7 +36,8 @@ class App extends React.Component {
         start: timeline[0].date,
         end: timeline[timeline.length - 1].date,
         storyPoint: this.findStoryPoint(timeline),
-        data: this.makeChartPoints(timeline)
+        data: this.makeChartPoints(timeline),
+        loader: false
       });
     })
     .catch(error => {

@@ -3,9 +3,9 @@ import { Chart } from 'react-google-charts';
 
 const TrendChart = ({chartData}) => {
     let displayChart;
-    let { data, trend, start, end } = chartData;
-    if( data.length === 0 ){
-      displayChart = <div>No Chart Data to Display.</div>
+    let { data, trend, start, end, loader } = chartData;
+    if( data.length === 0 || loader !== false ){
+      displayChart = loader
     }else{
       displayChart = (
        <div>
