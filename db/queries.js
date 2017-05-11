@@ -14,6 +14,7 @@ const getSearches = (numberOfSearches, callback) => {
     let dataClean = dataSlice.map((search) => {
       return search.name;
     });
+    dataClean.reverse();
     callback(null, dataClean);
   }).catch((err) => {
     callback(err, null);
