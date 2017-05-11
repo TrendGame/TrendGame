@@ -9,12 +9,12 @@ const Layout = (props) => {
     <div className="container">
       <Header/>
       <div className="row">
-        <History history={props.history}/>
         <Body
           chartData={props.chartData}
           collectData={props.collectData}
           storyPoint={props.storyPoint}
         />
+        <History history={props.history}/>
       </div>
       <Footer/>
     </div>
