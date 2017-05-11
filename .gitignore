@@ -4,3 +4,4 @@ bundle.js
 aylienApiKeys.js
 .eslintrc.json
 .vscode
+dbLocalConnection.js
