@@ -21,9 +21,8 @@ export default class Input extends React.Component {
   render () {
     return (
       <div>
-      <h4>hi there</h4>
-      <input placeholder="Explore your interests!" onChange = {this.handeInput}></input>
-      <input type="submit" onClick={this.submitTrend}></input>
+        <input placeholder="Enter a topic to explore" onChange={this.handeInput}></input>
+        <input type="submit" onClick={this.submitTrend}></input>
       </div>
     );
   }

@@ -4,7 +4,7 @@ export default class Header extends React.Component {
   render () {
     return (
       <div className="row">
-        <h1>TrendGame.</h1>
+        <h1>TrendGame</h1>
       </div>
     );
   }
