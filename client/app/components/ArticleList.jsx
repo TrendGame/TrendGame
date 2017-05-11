@@ -8,8 +8,8 @@ const ArticleList = ({ storyPoint }) => {
     articles = (
       <div>
         <h2>No stories on this trend found for {storyPoint.formattedTime}.</h2>
-      </div>;
-    )
+      </div>
+    );
   } else if (storyPoint.hasOwnProperty('stories')) {
     articles = (
       <div>
