@@ -34,4 +34,12 @@ app.get('/api/timeline', (req, res) => {
   });
 });
 
+app.post('/api/history', (req, res) => {
+  // post to db here
+});
+
+app.get('/api/history', (req, res) => {
+  // get from db here
+});
+
 module.exports = app;
