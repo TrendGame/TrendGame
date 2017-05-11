@@ -4,7 +4,7 @@ export default class Footer extends React.Component {
   render () {
     return (
       <div className="row">
-        <h2>This is the footer div</h2>
+        <p><a href="https://github.com/TrendGame/TrendGame">About</a></p>
       </div>
     );
   }
