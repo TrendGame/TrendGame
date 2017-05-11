@@ -21,10 +21,14 @@ class App extends React.Component {
     this.collectData = this.collectData.bind(this);
   }
 
+  componentDidMount() {
+    this.getSearchHistory();
+  }
+
   collectData(trend) {
     this.setState({
-    loader: <Loader color="#26A65B" size="16px" margin="4px"/>,
-    storyPoint: {}
+      loader: <Loader color="#26A65B" size="16px" margin="4px"/>,
+      storyPoint: {}
     });
     axios.get('/api/timeline', {
       params: { q: trend }
@@ -39,6 +43,7 @@ class App extends React.Component {
         data: this.makeChartPoints(timeline),
         loader: false
       });
+      return this.postSearchHistory(trend);
     })
     .catch(error => {
       console.error(error);
@@ -59,6 +64,23 @@ class App extends React.Component {
         return point;
       }
     }
+  }
+
+  getSearchHistory() {
+    axios.get('/api/history')
+    .then(response => {
+      this.setState({
+        history: response.data
+      });
+    });
+  }
+
+  postSearchHistory(trend) {
+    axios.post('/api/history', {
+      search: trend
+    }).then(response => {
+      this.getSearchHistory();
+    });
   }
 
   render () {
