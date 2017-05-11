@@ -1,4 +1,5 @@
 var db = require('./config');
+const findUnique = require('../utilities/findUnique');
 
 const insertSearch = (searchString, callback) => {
   db('trends').insert({name: searchString}).then((resp) => {
@@ -10,11 +11,11 @@ const insertSearch = (searchString, callback) => {
 
 const getSearches = (numberOfSearches, callback) => {
   db.select('name').from('trends').then((data) => {
-    let dataSlice = data.slice(numberOfSearches * -1);
+    let dataNoDups = findUnique(data);
+    let dataSlice = dataNoDups.slice(0, numberOfSearches);
     let dataClean = dataSlice.map((search) => {
       return search.name;
     });
-    dataClean.reverse();
     callback(null, dataClean);
   }).catch((err) => {
     callback(err, null);
