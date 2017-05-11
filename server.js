@@ -36,7 +36,7 @@ app.get('/api/timeline', (req, res) => {
 });
 
 app.post('/api/history', (req, res) => {
-  queries.insertSearch(req.body, (err, resp) => {
+  queries.insertSearch(req.body.search, (err, resp) => {
     if (err) {
       res.status(500).send(err);
     } else {
