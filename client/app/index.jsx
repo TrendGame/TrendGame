@@ -1,7 +1,6 @@
 import React from 'react';
 import {render} from 'react-dom';
 import axios from 'axios';
-import data from '../../integration-tests/fixtures/stitched-timeline';
 import Layout from './components/Layout';
 
 class App extends React.Component {
