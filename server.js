@@ -36,7 +36,6 @@ app.get('/api/timeline', (req, res) => {
 });
 
 app.post('/api/history', (req, res) => {
-  console.log('YOU HIT THE ENDPOINT', req);
   queries.insertSearch(req.body.search, (err, resp) => {
     if (err) {
       res.status(500).send(err);
