@@ -7,11 +7,13 @@ const ArticleList = ({ storyPoint }) => {
   !storyPoint.hasOwnProperty('stories')
   ? articles = <div></div>
   : articles = (
-      <div>
-        <h2>Top news stories for {storyPoint.formattedTime}</h2>
-        {storyPoint.stories.map(story => {
-          return <Article key={story.url} story={story}/>;
-        })}
+      <div className="row">
+        <div className="col-12">
+          <h3>Top stories from {storyPoint.formattedAxisTime}</h3>
+          {storyPoint.stories.map(story => {
+            return <Article key={story.url} story={story}/>;
+          })}
+        </div>
       </div>
   );
 
