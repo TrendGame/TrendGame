@@ -5,7 +5,7 @@ const ArticleList = ({ storyPoint }) => {
   let articles;
 
   !storyPoint.hasOwnProperty('stories')
-  ? articles = <div>no story point yet</div>
+  ? articles = <div></div>
   : articles = (
       <div>
         <h2>Top news stories for {storyPoint.formattedTime}</h2>

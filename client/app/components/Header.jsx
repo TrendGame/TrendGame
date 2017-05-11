@@ -3,7 +3,11 @@ import React from 'react';
 export default class Header extends React.Component {
   render () {
     return (
-      <h1>TrendGame.</h1>
+      <div className="row">
+        <div className="col-12">
+          <h1>TrendGame</h1>
+        </div>
+      </div>
     );
   }
 }
