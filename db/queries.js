@@ -10,7 +10,6 @@ const insertSearch = (searchString, callback) => {
 
 const getSearches = (numberOfSearches, callback) => {
   db.select('name').from('trends').then((data) => {
-    console.log(numberOfSearches);
     let dataSlice = data.slice(numberOfSearches * -1);
     let dataClean = dataSlice.map((search) => {
       return search.name;
@@ -20,3 +19,6 @@ const getSearches = (numberOfSearches, callback) => {
     callback(err, null);
   });
 };
+
+module.exports.insertSearch = insertSearch;
+module.exports.getSearches = getSearches;
