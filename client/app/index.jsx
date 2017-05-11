@@ -43,6 +43,7 @@ class App extends React.Component {
         data: this.makeChartPoints(timeline),
         loader: false
       });
+      return this.postSearchHistory(trend);
     })
     .catch(error => {
       console.error(error);
@@ -71,6 +72,14 @@ class App extends React.Component {
       this.setState({
         history: response.data
       });
+    });
+  }
+
+  postSearchHistory(trend) {
+    axios.post('/api/history', {
+      search: trend
+    }).then(response => {
+      this.getSearchHistory();
     });
   }
 
