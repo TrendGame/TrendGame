@@ -4,19 +4,19 @@ import Footer from './Footer';
 import Header from './Header';
 import History from './History';
 
-export default class Layout extends React.Component {
-  render () {
-    return (
-      <div>
-        <Header/>
-        <History history={this.props.history}/>
-        <Body
-          chartData={this.props.chartData}
-          collectData={this.props.collectData}
-          storyPoint={this.props.storyPoint}
-        />
-        <Footer/>
-      </div>
-    );
-  }
-}
+const Layout = (props) => {
+  return (
+    <div>
+      <Header/>
+      <History history={props.history}/>
+      <Body
+        chartData={props.chartData}
+        collectData={props.collectData}
+        storyPoint={props.storyPoint}
+      />
+      <Footer/>
+    </div>
+  );
+};
+
+export default Layout;

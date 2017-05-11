@@ -1,23 +1,23 @@
 import React from 'react';
 
 export default class Input extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-      trend: ""
-    }
+      trend: ''
+    };
     this.handeInput = this.handeInput.bind(this);
     this.submitTrend = this.submitTrend.bind(this);
   }
 
-  handeInput(event){
+  handeInput(event) {
     this.setState({trend: event.target.value});
   }
 
-  submitTrend(event){
+  submitTrend(event) {
     this.props.collectData(this.state.trend);
   }
-  
+
   render () {
     return (
       <div>
