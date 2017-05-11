@@ -20,10 +20,12 @@ export default class Input extends React.Component {
 
   render () {
     return (
-      <div>
-        <h6>Search for a trend</h6>
-        <input placeholder="Enter a topic" onChange={this.handeInput}></input>
-        <input type="submit" onClick={this.submitTrend}></input>
+      <div className="row">
+        <div className="col-12">
+          <h6>Search for a trend</h6>
+          <input placeholder="Enter a topic" onChange={this.handeInput}></input>
+          <input type="submit" onClick={this.submitTrend}></input>
+        </div>
       </div>
     );
   }

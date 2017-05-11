@@ -8,10 +8,12 @@ const ArticleList = ({ storyPoint }) => {
   ? articles = <div></div>
   : articles = (
       <div className="row">
-        <h3>Top news stories for {storyPoint.formattedTime}</h3>
-        {storyPoint.stories.map(story => {
-          return <Article key={story.url} story={story}/>;
-        })}
+        <div className="col-12">
+          <h3>Top news stories for {storyPoint.formattedTime}</h3>
+          {storyPoint.stories.map(story => {
+            return <Article key={story.url} story={story}/>;
+          })}
+        </div>
       </div>
   );
 
