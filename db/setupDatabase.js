@@ -14,7 +14,7 @@ db.schema.hasTable('trends').then(function (exists) {
     db.schema.createTable('trends', function (trend) {
       trend.increments('id').primary();
       trend.string('name');
-      trend.timestamps();
+      trend.timestamps(true, true);
     }).then(function (table) {
       console.log('Created Table trends');
     });
