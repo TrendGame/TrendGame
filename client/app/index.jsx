@@ -67,11 +67,11 @@ class App extends React.Component {
 
   getSearchHistory() {
     axios.get('/api/history')
-      .then(response => {
-        this.setState({
-          history: response.data
-        });
+    .then(response => {
+      this.setState({
+        history: response.data
       });
+    });
   }
 
   render () {
