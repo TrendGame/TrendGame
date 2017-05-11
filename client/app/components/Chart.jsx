@@ -1,14 +1,17 @@
 import React from 'react';
 import { Chart } from 'react-google-charts';
 
-export default class TrendChart extends React.Component {
-  render () {
-    let { data, trend, start, end } = this.props.chartData;
-    return (
-      <div>
+const TrendChart = ({chartData}) => {
+    let displayChart;
+    let { data, trend, start, end } = chartData;
+    if( data.length === 0 ){
+      displayChart = <div>No Chart Data to Display.</div>
+    }else{
+      displayChart = (
+       <div>
         <Chart
           chartType="LineChart"
-          data={data}
+          data = {data}
           options={{
             title: trend,
             hAxis: { title: 'Date', minValue: start, maxValue: end },
@@ -20,8 +23,9 @@ export default class TrendChart extends React.Component {
           height = "400px"
           legend_toggle
         />
-        <h1>hi</h1>
-      </div>
-    );
-  }
-}
+      </div>);
+    }
+    return (displayChart);
+};
+
+export default TrendChart;
