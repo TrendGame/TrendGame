@@ -39,7 +39,7 @@ class App extends React.Component {
   makeChartPoints (timeline) {
     let dataTuple = [['Date', 'Popularity']];
     timeline.forEach(point => {
-      dataTuple.push( [point.date, point.popularity] );
+      dataTuple.push( [point.formattedAxisTime, point.popularity] );
     });
     return dataTuple;
   }
