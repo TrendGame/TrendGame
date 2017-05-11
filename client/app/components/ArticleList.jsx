@@ -7,8 +7,8 @@ const ArticleList = ({ storyPoint }) => {
   !storyPoint.hasOwnProperty('stories')
   ? articles = <div></div>
   : articles = (
-      <div>
-        <h2>Top news stories for {storyPoint.formattedTime}</h2>
+      <div className="row">
+        <h3>Top news stories for {storyPoint.formattedTime}</h3>
         {storyPoint.stories.map(story => {
           return <Article key={story.url} story={story}/>;
         })}
