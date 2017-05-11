@@ -1,7 +1,7 @@
 import React from 'react';
 import { Chart } from 'react-google-charts';
 
-const TrendChart = ({chartData}) => {
+const TrendChart = ({ chartData, storyPoint }) => {
   let displayChart;
   let { data, trend, start, end, loader } = chartData;
   if (data.length === 0 || loader !== false) {
@@ -14,7 +14,7 @@ const TrendChart = ({chartData}) => {
             chartType="LineChart"
             data={data}
             options={{
-              title: trend,
+              title: `${trend} popularity peaked at ${storyPoint.formattedAxisTime}`,
               hAxis: { title: 'Date', minValue: start, maxValue: end },
               vAxis: { title: 'Popularity', minValue: 0, maxValue: 100 },
               legend: 'none'

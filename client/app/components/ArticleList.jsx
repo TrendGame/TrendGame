@@ -9,7 +9,7 @@ const ArticleList = ({ storyPoint }) => {
   : articles = (
       <div className="row">
         <div className="col-12">
-          <h3>Top news stories for {storyPoint.formattedTime}</h3>
+          <h3>Top stories from {storyPoint.formattedAxisTime}</h3>
           {storyPoint.stories.map(story => {
             return <Article key={story.url} story={story}/>;
           })}
