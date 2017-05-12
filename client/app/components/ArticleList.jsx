@@ -15,7 +15,7 @@ const ArticleList = ({ trend, storyPoint }) => {
       <div className="row">
         <div className="col-12">
           <div className="row mb-4">
-            <div className="col-12"><h4>Top {trend} stories {storyPoint.formattedTime}</h4></div>
+            <div className="col-12"><h4>Top <span className="text-lowercase">"{trend}"</span> stories {storyPoint.formattedTime}</h4></div>
           </div>
           <div className="row">
             {storyPoint.stories.map(story => {
