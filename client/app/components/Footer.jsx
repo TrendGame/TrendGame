@@ -5,7 +5,9 @@ export default class Footer extends React.Component {
     return (
       <footer className="footer">
         <div className="container text-center">
-          <a href="https://github.com/TrendGame/TrendGame" className="text-muted">About this project</a>
+          <a href="https://github.com/TrendGame/TrendGame" className="text-muted">
+            About this project
+          </a>
         </div>
       </footer>
     );
