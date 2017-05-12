@@ -34,9 +34,9 @@ class App extends React.Component {
       params: { q: trend }
     })
     .then(response => {
-      let timeline = response.data;
+      let timeline = response.data.timeline;
       this.setState({
-        trend: trend,
+        trend: response.data.trend,
         start: timeline[0].date,
         end: timeline[timeline.length - 1].date,
         storyPoint: this.findStoryPoint(timeline),
