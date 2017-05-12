@@ -27,7 +27,7 @@ export default class Input extends React.Component {
 
   render () {
     return (
-      <div className="row">
+      <div className="row mb-4">
         <div className="col-12">
           <div className="input-group">
             <input

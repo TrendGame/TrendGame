@@ -2,7 +2,6 @@ import React from 'react';
 import Body from './Body';
 import Footer from './Footer';
 import Header from './Header';
-import History from './History';
 
 const Layout = (props) => {
   return (
@@ -14,8 +13,8 @@ const Layout = (props) => {
             chartData={props.chartData}
             collectData={props.collectData}
             storyPoint={props.storyPoint}
+            history={props.history}
           />
-          <History history={props.history}/>
         </div>
       </div>
       <Footer/>
