@@ -3,7 +3,6 @@ import { Chart } from 'react-google-charts';
 
 const TrendChart = ({ chartData, storyPoint }) => {
   let displayChart;
-  console.log('THIS IS THE CHART DATA', chartData);
   let { data, trend, start, end, loader } = chartData;
   if (data.length === 0 || loader !== false) {
     displayChart = loader;
