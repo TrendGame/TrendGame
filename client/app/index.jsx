@@ -52,9 +52,13 @@ class App extends React.Component {
   }
 
   makeChartPoints (timeline) {
-    let dataTuple = [['Date', 'Popularity']];
-    timeline.forEach(point => {
-      dataTuple.push( [new Date(point.date * 1000), point.popularity] );
+    let dataTuple = [['Date', 'Popularity', {'type': 'string', 'role': 'style'}]];
+    timeline.forEach( point => {
+      if (point.stories) {
+        dataTuple.push( [new Date(point.date * 1000), point.popularity, 'point { size: 6; shape-type: diamond; visible: true; }'] );
+      } else {
+        dataTuple.push( [new Date(point.date * 1000), point.popularity, null] );
+      }
     });
     return dataTuple;
   }
