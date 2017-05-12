@@ -36,6 +36,7 @@
     "google-trends-api": "^4.1.0",
     "halogen": "^0.2.0",
     "knex": "^0.12.9",
+    "lodash": "^4.17.4",
     "mocha": "^3.3.0",
     "morgan": "^1.8.1",
     "mysql": "^2.13.0",

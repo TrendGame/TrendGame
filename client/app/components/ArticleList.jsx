@@ -15,10 +15,10 @@ const ArticleList = ({ storyPoint }) => {
       <div className="row">
         <div className="col-12">
           <h2>Top news stories for {storyPoint.formattedTime}</h2>
-          {storyPoint.stories.map(story => {
+        </div>
+          {storyPoint.stories.map((story, index) => {
             return <Article key={story.url} story={story}/>;
           })}
-        </div>
       </div>
     );
   } else {
