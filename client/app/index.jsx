@@ -80,6 +80,8 @@ class App extends React.Component {
       search: trend
     }).then(response => {
       this.getSearchHistory();
+    }).catch(err => {
+      console.log(err);
     });
   }
 
