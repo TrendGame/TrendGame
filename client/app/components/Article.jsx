@@ -14,7 +14,7 @@ const Article = ({ story }) => {
         <div className="card-block">
           <h4 className="card-title">{headline}</h4>
           <p className="card-text">{summary}</p>
-          <a href={url} className="btn btn-primary">Read more</a>
+          <a href={url} className="card-link">Read more</a>
         </div>
       </div>
     </div>
