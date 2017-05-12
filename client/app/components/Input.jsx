@@ -29,9 +29,26 @@ export default class Input extends React.Component {
     return (
       <div className="row">
         <div className="col-12">
-          <h6>Search for a trend</h6>
-          <input placeholder="Enter a topic" onKeyPress={this.onEnter} onChange={this.handeInput}></input>
-          <input type="submit" onClick={this.submitTrend}></input>
+          <div className="input-group">
+            <input
+              className="form-control"
+              type="text"
+              placeholder="Enter a topic"
+              onKeyPress={this.onEnter}
+              onChange={this.handeInput}
+              autoFocus
+            >
+            </input>
+            <span className="input-group-btn">
+              <button
+                className="btn btn-primary"
+                type="button"
+                onClick={this.submitTrend}
+              >
+                Search
+              </button>
+            </span>
+          </div>
         </div>
       </div>
     );
