@@ -8,6 +8,7 @@ export default class Body extends React.Component {
     return (
       <div className="col-8">
         <Input collectData={this.props.collectData}/>
+
         <TrendChart chartData={this.props.chartData} storyPoint={this.props.storyPoint}/>
         <ArticleList storyPoint={this.props.storyPoint}/>
       </div>
