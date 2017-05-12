@@ -35,8 +35,9 @@ class App extends React.Component {
     })
     .then(response => {
       let timeline = response.data.timeline;
+      let trendCapitalized = response.data.trend[0].toUpperCase() + response.data.trend.slice(1);
       this.setState({
-        trend: response.data.trend,
+        trend: trendCapitalized,
         start: timeline[0].date,
         end: timeline[timeline.length - 1].date,
         storyPoint: this.findStoryPoint(timeline),
