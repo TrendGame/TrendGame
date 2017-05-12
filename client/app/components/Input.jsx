@@ -29,7 +29,7 @@ export default class Input extends React.Component {
     return (
       <div className="row">
         <div className="col-12">
-          <div className="form-group">
+          <div className="input-group">
             <input
               className="form-control"
               type="text"
@@ -39,12 +39,15 @@ export default class Input extends React.Component {
               autoFocus
             >
             </input>
-            <input
-              className="form-control"
-              type="submit"
-              onClick={this.submitTrend}
-            >
-            </input>
+            <span className="input-group-btn">
+              <button
+                className="btn btn-primary"
+                type="button"
+                onClick={this.submitTrend}
+              >
+                Search
+              </button>
+            </span>
           </div>
         </div>
       </div>
