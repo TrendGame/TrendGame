@@ -3,7 +3,7 @@ import HistoryItem from './HistoryItem';
 
 const History = ({ history }) => {
   return (
-    <div className="row">
+    <div className="row mb-5">
       <div className="col-12 text-center">
         <small>Recent searches</small>
         <ul className="list-inline text-center text-muted">
