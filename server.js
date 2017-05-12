@@ -43,7 +43,9 @@ app.post('/api/history', (req, res) => {
   let trend = req.body.search;
 
   if (cleanData.checkIsReadyForDb(trend)) {
-    queries.insertSearch(req.body.search, (err, resp) => {
+    trend = cleanData.prepForDb(trend);
+
+    queries.insertSearch(trend, (err, resp) => {
       if (err) {
         res.status(500).send(err);
       } else {
