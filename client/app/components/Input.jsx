@@ -20,8 +20,7 @@ export default class Input extends React.Component {
   }
 
   onEnter(event) {
-    console.log(event.key);
-    if( event.key === 'Enter' ){
+    if(event.key === 'Enter'){
       this.props.collectData(this.state.trend);
     }
   }
