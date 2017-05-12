@@ -11,7 +11,7 @@ const checkForAllSpaces = (trend) => {
 const prepForAylien = (trend) => {
   trend = trend.toLowerCase();
 
-  if (trend.length === 0 || this.checkForAllSpaces(trend)) {
+  if (trend.length === 0 || checkForAllSpaces(trend)) {
     trend = '"the void"';
   }
 
@@ -23,7 +23,7 @@ const prepForAylien = (trend) => {
 };
 
 const checkIsReadyForDb = (trend) => {
-  if (trend.length === 0 || this.checkForAllSpaces(trend)) {
+  if (trend.length === 0 || checkForAllSpaces(trend)) {
     return false;
   }
 
