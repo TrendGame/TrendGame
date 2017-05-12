@@ -40,13 +40,19 @@ app.get('/api/timeline', (req, res) => {
 });
 
 app.post('/api/history', (req, res) => {
-  queries.insertSearch(req.body.search, (err, resp) => {
-    if (err) {
-      res.status(500).send(err);
-    } else {
-      res.status(200).send(resp);
-    }
-  });
+  let trend = req.body.search;
+
+  if (cleanData.checkIsReadyForDb(trend)) {
+    queries.insertSearch(req.body.search, (err, resp) => {
+      if (err) {
+        res.status(500).send(err);
+      } else {
+        res.status(200).send(resp);
+      }
+    });
+  } else {
+    res.status(400).send();
+  }
 });
 
 app.get('/api/history', (req, res) => {
