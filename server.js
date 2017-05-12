@@ -1,5 +1,6 @@
 const makeTimeline = require('./utilities/makeTimeline');
 const queries = require('./db/queries');
+const cleanData = require('./utilities/cleanSearch');
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -26,7 +27,10 @@ app.get('/api', (req, res) => {
 });
 
 app.get('/api/timeline', (req, res) => {
-  makeTimeline(req.query.q, (err, data) => {
+  let trend = req.query.q;
+  trend = cleanData.prepForAylien(trend);
+
+  makeTimeline(trend, (err, data) => {
     if (err) {
       res.status(500).send(err);
     } else {
@@ -58,5 +62,5 @@ app.get('/api/history', (req, res) => {
 app.use((req, res) => {
   res.status(404);
   res.sendFile(__dirname + '/404.html');
-})
+});
 module.exports = app;
