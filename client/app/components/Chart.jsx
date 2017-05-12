@@ -20,6 +20,7 @@ const TrendChart = ({ chartData, storyPoint }) => {
             maxValue: new Date(end * 1000)
           },
           vAxis: { title: null, minValue: 0, maxValue: 100 },
+          chartArea: { width: '90%', height: '80%' },
           legend: 'none'
         }}
         graph_id="LineChart"
