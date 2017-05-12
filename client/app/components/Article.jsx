@@ -4,7 +4,7 @@ const Article = ({ story }) => {
   let { headline, url, media, summary } = story;
 
   return (
-    <div className="col-6">
+    <div className="col-12 col-lg-6">
       <div className="card">
         <img
           className="card-img-top img-fluid"
