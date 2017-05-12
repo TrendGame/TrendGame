@@ -13,8 +13,9 @@ const TrendChart = ({ chartData, storyPoint }) => {
         data={data}
         options={{
           title: `${trend} popularity peaked at ${storyPoint.formattedAxisTime}`,
-          hAxis: { title: 'Date', minValue: start, maxValue: end },
-          vAxis: { title: 'Popularity', minValue: 0, maxValue: 100 },
+          hAxis: { title: null, minValue: new Date(start * 1000), maxValue: new Date(end * 1000) },
+          vAxis: { title: null, minValue: 0, maxValue: 100 },
+          chartArea: { width: '90%', height: '80%' },
           legend: 'none'
         }}
         graph_id="LineChart"
