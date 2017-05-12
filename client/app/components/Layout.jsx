@@ -8,14 +8,12 @@ const Layout = (props) => {
     <div>
       <div className="container">
         <Header/>
-        <div className="row">
-          <Body
-            chartData={props.chartData}
-            collectData={props.collectData}
-            storyPoint={props.storyPoint}
-            history={props.history}
-          />
-        </div>
+        <Body
+          chartData={props.chartData}
+          collectData={props.collectData}
+          storyPoint={props.storyPoint}
+          history={props.history}
+        />
       </div>
       <Footer/>
     </div>

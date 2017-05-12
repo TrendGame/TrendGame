@@ -6,11 +6,13 @@ import ArticleList from './ArticleList';
 
 const Body = (props) => {
   return (
-    <div className="col-8 offset-2">
-      <Input collectData={props.collectData}/>
-      <History history={props.history}/>
-      <TrendChart chartData={props.chartData} storyPoint={props.storyPoint}/>
-      <ArticleList storyPoint={props.storyPoint}/>
+    <div className="row">
+      <div className="col-8 offset-2">
+        <Input collectData={props.collectData}/>
+        <History history={props.history}/>
+        <TrendChart chartData={props.chartData} storyPoint={props.storyPoint}/>
+        <ArticleList storyPoint={props.storyPoint}/>
+      </div>
     </div>
   );
 };
