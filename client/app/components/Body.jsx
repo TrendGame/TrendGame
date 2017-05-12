@@ -11,7 +11,7 @@ const Body = ({ collectData, history, chartData, storyPoint }) => {
         <Input collectData={collectData}/>
         <History history={history}/>
         <TrendChart chartData={chartData} storyPoint={storyPoint}/>
-        <ArticleList storyPoint={storyPoint}/>
+        <ArticleList trend={chartData.trend} storyPoint={storyPoint}/>
       </div>
     </div>
   );
