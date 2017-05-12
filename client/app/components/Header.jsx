@@ -5,7 +5,7 @@ export default class Header extends React.Component {
     return (
       <div className="row">
         <div className="col-12 mt-4 mb-4">
-          <h1>TrendGame</h1>
+          <h1 className="text-center">TrendGame</h1>
         </div>
       </div>
     );
