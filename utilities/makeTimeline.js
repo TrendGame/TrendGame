@@ -16,7 +16,12 @@ const makeTimeline = (searchString, callback) => {
         } else {
           const timeline = makeFinalData(timeSeries, peakStories);
 
-          callback(null, timeline);
+          const response = {
+            timeline: timeline,
+            trend: searchString.slice(1, -1)
+          };
+
+          callback(null, response);
         }
       });
     }
