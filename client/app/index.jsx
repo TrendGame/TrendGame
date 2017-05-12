@@ -3,8 +3,6 @@ import {render} from 'react-dom';
 import axios from 'axios';
 import Layout from './components/Layout';
 var Loader = require('halogen/PulseLoader');
-import historyList from '../../tests/fixtures/history';
-
 
 class App extends React.Component {
   constructor(props) {
@@ -16,7 +14,7 @@ class App extends React.Component {
       trend: '',
       storyPoint: {},
       loader: false,
-      history: historyList
+      history: []
     };
     this.collectData = this.collectData.bind(this);
   }
