@@ -8,26 +8,29 @@ const TrendChart = ({ chartData, storyPoint }) => {
     displayChart = loader;
   } else {
     displayChart = (
-      <div className="row mb-5">
-        <div className="col-12">
-          <Chart
-            chartType="LineChart"
-            data={data}
-            options={{
-              title: `${trend} popularity peaked at ${storyPoint.formattedAxisTime}`,
-              hAxis: { title: 'Date', minValue: start, maxValue: end },
-              vAxis: { title: 'Popularity', minValue: 0, maxValue: 100 },
-              legend: 'none'
-            }}
-            graph_id="LineChart"
-            width="100%"
-            height="400px"
-            legend_toggle
-          />
-        </div>
-    </div>);
+      <Chart
+        chartType="LineChart"
+        data={data}
+        options={{
+          title: `${trend} popularity peaked at ${storyPoint.formattedAxisTime}`,
+          hAxis: { title: 'Date', minValue: start, maxValue: end },
+          vAxis: { title: 'Popularity', minValue: 0, maxValue: 100 },
+          legend: 'none'
+        }}
+        graph_id="LineChart"
+        width="100%"
+        height="400px"
+        legend_toggle
+      />
+    );
   }
-  return (displayChart);
+  return (
+    <div className="row mb-5">
+      <div className="col-12 text-center">
+        {displayChart}
+      </div>
+    </div>
+  );
 };
 
 export default TrendChart;
