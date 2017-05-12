@@ -3,13 +3,15 @@ import HistoryItem from './HistoryItem';
 
 const History = ({ history }) => {
   return (
-    <div className="col-4">
-      <h6>Recent searches</h6>
-      <ul className="list-inline">
-        {history.map(term => {
-          return <HistoryItem key={term} term={term}/>;
-        })}
-      </ul>
+    <div className="row">
+      <div className="col-12 text-center">
+        <small>Recent searches</small>
+        <ul className="list-inline text-center text-muted">
+          {history.map((term, index) => {
+            return <HistoryItem key={term} term={term} index={index}/>;
+          })}
+        </ul>
+      </div>
     </div>
   );
 };
