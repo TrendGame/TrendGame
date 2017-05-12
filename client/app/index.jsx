@@ -26,10 +26,6 @@ class App extends React.Component {
   }
 
   collectData(trend) {
-    if (trend[0] !== '"' && trend[trend.length - 1] !== '"') {
-      trend = '"' + trend + '"';
-    }
-
     this.setState({
       loader: <Loader color="#26A65B" size="16px" margin="4px"/>,
       storyPoint: {}
