@@ -15,7 +15,6 @@ const ArticleList = ({ storyPoint }) => {
       <div className="row">
         <div className="col-12">
           <h2>Top news stories for {storyPoint.formattedTime}</h2>
-          {/*{makeArticleRow(storyPoint.stories, 2)}*/}
           <div className="row">
             {storyPoint.stories.map(story => {
               return <Article key={story.url} story={story}/>;
