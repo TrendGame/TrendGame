@@ -32,17 +32,23 @@ class App extends React.Component {
       params: { q: trend }
     })
     .then(response => {
-      let timeline = response.data.timeline;
-      let trendCapitalized = response.data.trend[0].toUpperCase() + response.data.trend.slice(1);
-      this.setState({
-        trend: trendCapitalized,
-        start: timeline[0].date,
-        end: timeline[timeline.length - 1].date,
-        storyPoint: this.findStoryPoint(timeline),
-        data: this.makeChartPoints(timeline),
-        loader: false
-      });
-      return this.postSearchHistory(trend);
+      if (response.data.timeline === null) {
+        this.setState({
+          loader: <div className="text-center"><h6>Sorry, try a less obscure trend.</h6></div>
+        });
+      } else {
+        let timeline = response.data.timeline;
+        let trendCapitalized = response.data.trend[0].toUpperCase() + response.data.trend.slice(1);
+        this.setState({
+          trend: trendCapitalized,
+          start: timeline[0].date,
+          end: timeline[timeline.length - 1].date,
+          storyPoint: this.findStoryPoint(timeline),
+          data: this.makeChartPoints(timeline),
+          loader: false
+        });
+        return this.postSearchHistory(trend);
+      }
     })
     .catch(error => {
       console.error(error);
