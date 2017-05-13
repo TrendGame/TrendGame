@@ -1,6 +1,10 @@
 module.exports = (timeline, stories) => {
   const timelineDates = timeline.map(point => point.date);
 
+  if (timeline.length === 0) {
+    return null;
+  }
+
   stories.forEach(story => {
     // throw error if a story's date is not in the timeline
     if (!timelineDates.includes(story.date)) {
