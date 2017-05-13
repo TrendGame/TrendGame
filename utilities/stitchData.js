@@ -6,11 +6,6 @@ module.exports = (timeline, stories) => {
   }
 
   stories.forEach(story => {
-    // throw error if a story's date is not in the timeline
-    if (!timelineDates.includes(story.date)) {
-      throw new Error(`Story date matches no timeline dates: ${story}`);
-    }
-
     // add stories to matching the timeline date
     timeline.forEach(point => {
       if (point.date === story.date) {
