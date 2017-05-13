@@ -13,9 +13,13 @@ const ArticleList = ({ trend, storyPoint }) => {
   } else if (storyPoint.hasOwnProperty('stories')) {
     articles = (
       <div className="row">
-        <div className="col-12">
+        <div className="col">
           <div className="row mb-4">
-            <div className="col-12"><h4><strong>Why</strong> did <strong className="text-lowercase">{trend}</strong> peak?</h4></div>
+            <div className="col">
+              <h4>
+                <strong>Why</strong> did <strong className="text-lowercase">{trend}</strong> peak?
+              </h4>
+            </div>
           </div>
           <div className="row">
             {storyPoint.stories.map(story => {

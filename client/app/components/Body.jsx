@@ -7,7 +7,7 @@ import ArticleList from './ArticleList';
 const Body = ({ collectData, history, chartData, storyPoint }) => {
   return (
     <div className="row">
-      <div className="col-12 col-m-10 offset-m-1 col-lg-8 offset-lg-2">
+      <div className="col col-m-10 offset-m-1 col-lg-8 offset-lg-2">
         <Input collectData={collectData}/>
         <History history={history} collectData={collectData}/>
         <TrendChart chartData={chartData} storyPoint={storyPoint}/>

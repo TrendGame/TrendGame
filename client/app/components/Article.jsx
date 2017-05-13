@@ -14,7 +14,7 @@ class Article extends React.Component {
 
   render() {
     return (
-      <div className="col-12 col-lg-6">
+      <div className="col-12 col-md-6">
         <div className="card">
           <img
             className="card-img-top img-fluid"
