@@ -4,9 +4,11 @@ import { Chart } from 'react-google-charts';
 const TrendChart = ({ chartData, storyPoint }) => {
   let displayChart;
   let { data, trend, start, end, loader } = chartData;
-  if (data.length === 0 || loader !== false) {
+  if (data === null) {
+    displayChart = <div><h1>Not a valid search</h1></div>
+  }else if(data.length === 0 || loader !== false) {
     displayChart = loader;
-  } else {
+  }else {
     displayChart = (
       <span>
         <h4>
