@@ -8,5 +8,5 @@ module.exports = {
   host: '127.0.0.1',
   user: '<YOUR SHELL USERNAME HERE>',
   password: '',
-  database: '<YOUR SHELL USERNAME HERE>'
+  database: '<YOUR DATABASE NAME HERE>'
 };
