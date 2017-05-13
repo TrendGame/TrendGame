@@ -10,7 +10,7 @@ const TrendChart = ({ chartData, storyPoint }) => {
     displayChart = (
       <span>
         <h4>
-          {`Popularity peaked on ${storyPoint.formattedAxisTime} for `}<span className="text-lowercase">"{trend}"</span>
+          Peak popularity for <em className="text-lowercase">{trend}:</em> {storyPoint.formattedAxisTime}
         </h4>
         <Chart
           chartType="LineChart"
