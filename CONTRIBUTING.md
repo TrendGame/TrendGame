@@ -53,7 +53,7 @@ These commands will help you do this:
 git checkout -b `your-branch-name`
 ```
 
-### Make commits to your feature branch. 
+### Make commits to your feature branch.
 
 Prefix each commit like so
   - (feat) Added a new feature
@@ -140,7 +140,7 @@ Thanks for contributing!
 1. Uphold the current code standard:
     - Keep your code [DRY][].
     - Apply the [boy scout rule][].
-    - Follow [STYLE-GUIDE.md](STYLE-GUIDE.md)
+    - Follow [Airbnb Style Guide](https://github.com/airbnb/javascript)
 1. Run the [tests][] before submitting a pull request.
 1. Tests are very, very important. Submit tests if your pull request contains
    new, testable behavior.
