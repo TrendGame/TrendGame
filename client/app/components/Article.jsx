@@ -1,24 +1,35 @@
 import React from 'react';
 
-const Article = ({ story }) => {
-  let { headline, url, media, summary } = story;
+class Article extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      media: this.props.story.media
+    }
+  }
 
-  return (
-    <div className="col-12 col-lg-6">
-      <div className="card">
-        <img
-          className="card-img-top img-fluid"
-          src={media}
-          alt={headline}
-        />
-        <div className="card-block">
-          <h4 className="card-title">{headline}</h4>
-          <p className="card-text">{summary}</p>
-          <a href={url} className="card-link">Read more</a>
+  handleBrokenImage(event){
+    this.setState({media: ''})
+  }
+
+  render(){
+    return (
+      <div className="col-12 col-lg-6">
+        <div className="card">
+          <img
+            className="card-img-top img-fluid"
+            src={this.state.media}
+            onError={(e)=>{this.handleBrokenImage(e)}}
+          />
+          <div className="card-block">
+            <h4 className="card-title">{this.props.story.headline}</h4>
+            <p className="card-text">{this.props.story.summary}</p>
+            <a href={this.props.story.url} className="card-link">Read more</a>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  } 
 };
 
 export default Article;
