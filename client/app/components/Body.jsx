@@ -9,7 +9,7 @@ const Body = ({ collectData, history, chartData, storyPoint }) => {
     <div className="row">
       <div className="col-8 offset-2">
         <Input collectData={collectData}/>
-        <History history={history}/>
+        <History history={history} collectData={collectData}/>
         <TrendChart chartData={chartData} storyPoint={storyPoint}/>
         <ArticleList trend={chartData.trend} storyPoint={storyPoint}/>
       </div>
