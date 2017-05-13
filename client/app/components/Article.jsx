@@ -5,21 +5,21 @@ class Article extends React.Component {
     super(props);
     this.state = {
       media: this.props.story.media
-    }
+    };
   }
 
-  handleBrokenImage(event){
-    this.setState({media: ''})
+  handleBrokenImage(event) {
+    this.setState({media: ''});
   }
 
-  render(){
+  render() {
     return (
       <div className="col-12 col-lg-6">
         <div className="card">
           <img
             className="card-img-top img-fluid"
             src={this.state.media}
-            onError={(e)=>{this.handleBrokenImage(e)}}
+            onError={e => { this.handleBrokenImage(e); }}
           />
           <div className="card-block">
             <h4 className="card-title">{this.props.story.headline}</h4>
@@ -29,7 +29,7 @@ class Article extends React.Component {
         </div>
       </div>
     );
-  } 
-};
+  }
+}
 
 export default Article;
