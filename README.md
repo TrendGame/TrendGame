@@ -3,10 +3,10 @@
 
 ## Team
 
-- Alex
-- Eric
-- Fu Fei
-- Prateek
+- [Alex](https://github.com/aseiden)
+- [Eric](https://github.com/epan)
+- [Fu Fei](https://github.com/dufufeisdu)
+- [Prateek](https://github.com/BhattPrateek)
 
 ## Usage
 > Go to URL: [https://trend-game.herokuapp.com/](https://trend-game.herokuapp.com/)
@@ -16,14 +16,19 @@
 - Node
 - NPM
 - API key for [Aylien News API](https://newsapi.aylien.com/)
+- Postgres
 
 ## Development
 
-### Installing Dependencies
+### Installing dependencies
 
 From the root directory:
 
 `npm install`
+
+### Initializing the database
+
+More info to come
 
 ### Running locally
 
