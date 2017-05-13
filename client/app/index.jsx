@@ -25,7 +25,7 @@ class App extends React.Component {
 
   collectData(trend) {
     this.setState({
-      loader: <Loader color="#0275d8" size="16px" margin="4px"/>,
+      loader: <div className="text-center"><Loader color="#0275d8" size="16px" margin="4px"/></div>,
       storyPoint: {}
     });
     axios.get('/api/timeline', {
