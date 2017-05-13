@@ -28,7 +28,7 @@ a.card-clickable {
   color: #292b2c;
 }
 
-a.card-clickable:hover {
+a.card-clickable:hover, a.card-clickable:active {
   text-decoration: none;
 }
 
