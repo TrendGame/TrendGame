@@ -23,3 +23,17 @@ body {
 .card {
   margin-bottom: 30px;
 }
+
+a.card-clickable {
+  color: #292b2c;
+}
+
+a.card-clickable:hover {
+  text-decoration: none;
+}
+
+a.card-clickable:hover div.card {
+  border-color: #0275d8;
+  -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+}
