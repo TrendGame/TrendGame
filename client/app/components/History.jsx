@@ -4,7 +4,7 @@ import HistoryItem from './HistoryItem';
 const History = ({ history, collectData }) => {
   return (
     <div className="row mb-5">
-      <div className="col-12 text-center">
+      <div className="col text-center">
         <small>Recent searches</small>
         <ul className="list-inline text-center text-muted">
           {history.map((term, index) => {

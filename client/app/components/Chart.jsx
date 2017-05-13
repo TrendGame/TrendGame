@@ -31,7 +31,7 @@ const TrendChart = ({ chartData, storyPoint }) => {
   }
   return (
     <div className="row mb-5">
-      <div className="col-12">
+      <div className="col">
         {displayChart}
       </div>
     </div>
