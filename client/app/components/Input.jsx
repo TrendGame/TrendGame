@@ -7,48 +7,42 @@ export default class Input extends React.Component {
       trend: ''
     };
     this.handeInput = this.handeInput.bind(this);
-    this.submitTrend = this.submitTrend.bind(this);
-    this.onEnter = this.onEnter.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handeInput(event) {
     this.setState({trend: event.target.value});
   }
 
-  submitTrend(event) {
+  handleSubmit(e) {
+    e.preventDefault();
     this.props.collectData(this.state.trend);
-  }
-
-  onEnter(event) {
-    if (event.key === 'Enter') {
-      this.props.collectData(this.state.trend);
-    }
   }
 
   render () {
     return (
       <div className="row mb-4">
         <div className="col">
-          <div className="input-group">
-            <input
-              className="form-control"
-              type="text"
-              placeholder="Enter a topic"
-              onKeyPress={this.onEnter}
-              onChange={this.handeInput}
-              autoFocus
-            >
-            </input>
-            <span className="input-group-btn">
-              <button
-                className="btn btn-primary"
-                type="button"
-                onClick={this.submitTrend}
+          <form
+            action="submit"
+            onSubmit={e => { this.handleSubmit(e); }}
+          >
+            <div className="input-group">
+              <input
+                className="form-control search-input"
+                type="text"
+                placeholder="Enter a topic"
+                onChange={this.handeInput}
+                autoFocus
               >
-                Search
-              </button>
-            </span>
-          </div>
+              </input>
+              <span className="input-group-btn">
+                <button className="btn btn-primary" type="submit">
+                  Search
+                </button>
+              </span>
+            </div>
+          </form>
         </div>
       </div>
     );
