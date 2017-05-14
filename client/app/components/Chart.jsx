@@ -9,9 +9,9 @@ const TrendChart = ({ chartData, storyPoint }) => {
   } else {
     displayChart = (
       <span>
-        <h4>
+        <h2 className="h4">
           <strong>When</strong> did interest in <strong className="text-lowercase">{trend}</strong> peak? <strong>{storyPoint.formattedAxisTime}</strong>
-        </h4>
+        </h2>
         <Chart
           chartType="LineChart"
           data={data}

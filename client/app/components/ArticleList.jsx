@@ -16,9 +16,9 @@ const ArticleList = ({ trend, storyPoint }) => {
         <div className="col">
           <div className="row mb-4">
             <div className="col">
-              <h4>
+              <h2 className="h4">
                 <strong>Why</strong> did <strong className="text-lowercase">{trend}</strong> peak?
-              </h4>
+              </h2>
             </div>
           </div>
           <div className="row">

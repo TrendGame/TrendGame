@@ -23,7 +23,7 @@ class Article extends React.Component {
               onError={e => { this.handleBrokenImage(e); }}
             />
             <div className="card-block">
-              <h4 className="card-title">{this.props.story.headline}</h4>
+              <h3 className="h4 card-title">{this.props.story.headline}</h3>
               <p className="card-text">{this.props.story.summary}</p>
             </div>
           </div>
