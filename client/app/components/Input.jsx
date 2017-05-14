@@ -10,12 +10,13 @@ export default class Input extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handeInput(event) {
-    this.setState({trend: event.target.value});
+  handeInput(e) {
+    this.setState({trend: e.target.value});
   }
 
   handleSubmit(e) {
     e.preventDefault();
+    document.querySelector('.search-input').blur();
     this.props.collectData(this.state.trend);
   }
 
@@ -25,7 +26,7 @@ export default class Input extends React.Component {
         <div className="col">
           <form
             action="submit"
-            onSubmit={e => { this.handleSubmit(e); }}
+            onSubmit={this.handleSubmit}
           >
             <div className="input-group">
               <input
