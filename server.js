@@ -69,6 +69,6 @@ app.get('/api/history', (req, res) => {
 
 app.use((req, res) => {
   res.status(404);
-  res.sendFile(__dirname + '/404.html');
+  res.sendFile(__dirname + '/client/public/404.html');
 });
 module.exports = app;
