@@ -9,7 +9,7 @@ const timeline = require('./fixtures/stitched-timeline');
 describe('Stitching timeline to make final data', function() {
   it('should merge trend query and news data on matching dates', function() {
     const expected = timeline;
-    const actual = stitchTimeline(trends, stories);
+    const actual = stitchTimeline(trends, stories, '"clinton"');
     expect(actual).to.deep.equal(expected);
   });
 });
