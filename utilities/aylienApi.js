@@ -42,6 +42,7 @@ const getStories = (queryString, peaks, scope, callback) => {
     'language': ['en'],
     'publishedAtStart': formattedPeakDate,
     'publishedAtEnd': formattedPeakEndDate,
+    'perPage': 10
   };
 
   opts[scope] = queryString;
@@ -50,9 +51,6 @@ const getStories = (queryString, peaks, scope, callback) => {
     if (error) {
       callback(error, null);
     } else {
-      // 4 chosen so we display 4 stories under the graph.  Not ideal to have this hard coded here, but MVP!
-      // Ideally we only query for 4, but I haven't been able to find a limit query parameter.
-      data.stories.length = 4;
       const formattedStories = formatStories(data);
       let finalData = [];
       finalData.push({

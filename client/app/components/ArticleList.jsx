@@ -4,7 +4,7 @@ import Article from './Article.jsx';
 const ArticleList = ({ trend, storyPoint }) => {
   let articles;
 
-  if (storyPoint.hasOwnProperty('stories') && storyPoint.stories[0] === null) {
+  if (storyPoint.hasOwnProperty('stories') && storyPoint.stories.length === 0) {
     articles = (
       <div>
         <h6>No stories on this trend found for {storyPoint.formattedTime}.</h6>
