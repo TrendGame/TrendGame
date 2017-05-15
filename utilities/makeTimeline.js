@@ -21,25 +21,13 @@ const makeTimeline = (searchString, callback) => {
             if (err) {
               callback(err, null);
             } else {
-              const timeline = makeFinalData(timeSeries, peakStories);
-
-              const response = {
-                timeline: timeline,
-                trend: searchString.slice(1, -1)
-              };
-
+              const response = makeFinalData(timeSeries, peakStories, searchString);
               callback(null, response);
             }
           });
 
         } else {
-          const timeline = makeFinalData(timeSeries, peakStories);
-
-          const response = {
-            timeline: timeline,
-            trend: searchString.slice(1, -1)
-          };
-
+          const response = makeFinalData(timeSeries, peakStories, searchString);
           callback(null, response);
         }
       });
