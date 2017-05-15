@@ -26,7 +26,7 @@ h1:first-letter {
   border-color: #dc3c3c;
 }
 
-button.btn.btn-primary:hover {
+.btn-primary:hover {
   background-color: #f14242;
   border-color: #f14242;
 }
