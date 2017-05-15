@@ -6,12 +6,12 @@ var worker = function(server){
    setInterval(()=>{
         axios.get(server)
         .then(response =>{
-            console.log("Success!");
+            console.log("Success!", server);
         })
         .catch(error =>{
             console.log("ERROR!", server);
         });
-    }, 3000);
+    }, 270000);
 };
 
 
