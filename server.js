@@ -70,11 +70,7 @@ app.get('/api/history', (req, res) => {
 });
 
 app.get('/api/worker', (req, res) => {
-<<<<<<< HEAD
   res.send("Im awake!!");
-=======
-  res.status(200).send();
->>>>>>> b5102f5459b75a2dca5e56918beb374e773ce945
 });
 
 app.use((req, res) => {
