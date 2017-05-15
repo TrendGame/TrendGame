@@ -1,3 +1,54 @@
+/* Brand styling
+-------------------------------------------------- */
+*, input, button {
+  font-family: 'Work Sans', sans-serif;
+}
+
+* {
+  background-color: rgb(239, 249, 255);
+}
+
+footer {
+  background-color: rgb(239, 249, 255) !important;
+}
+
+h1 {
+  font-family: 'Space Mono';
+  font-weight: bold;
+}
+
+h1:first-letter {
+  letter-spacing: -2px;
+}
+
+.btn-primary {
+  background-color: #dc3c3c;
+  border-color: #dc3c3c;
+}
+
+.btn-primary:hover {
+  background-color: #f14242;
+  border-color: #f14242;
+}
+
+.btn-primary, .search-input, .card, .card img {
+  border-radius: 0px;
+}
+
+.search-input:focus  {
+  border-color: #636c72;
+}
+
+.card, .card-block, .card img, .card-title, .card-text {
+  background-color: #fff;
+}
+
+.card:hover .card-block, .card:hover .card-title, .card:hover .card-text {
+  background-color: rgba(255, 255, 255, 0.5);
+  -webkit-transition: background-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+  transition: background-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+}
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
@@ -28,12 +79,12 @@ a.card-clickable {
   color: #292b2c;
 }
 
-a.card-clickable:hover, a.card-clickable:active {
+a.card-clickable:hover, a.card-clickable:active, a.card-clickable:visited {
   text-decoration: none;
 }
 
 a.card-clickable:hover div.card {
-  border-color: #0275d8;
+  border-color: #636c72;
   -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
 }
