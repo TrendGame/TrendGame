@@ -6,7 +6,7 @@ var worker = function(server){
    setInterval(()=>{
         axios.get(server)
         .then(response =>{
-            console.log("Success!", server);
+            console.log("Success!");
         })
         .catch(error =>{
             console.log("ERROR!", server);
