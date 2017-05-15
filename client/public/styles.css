@@ -1,3 +1,18 @@
+/* Brand styling
+-------------------------------------------------- */
+*, input, button {
+  font-family: 'Karla', sans-serif;
+}
+
+h1 {
+  font-family: 'Space Mono';
+  font-weight: bold;
+}
+
+h1:first-letter {
+  letter-spacing: -2px;
+}
+
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
