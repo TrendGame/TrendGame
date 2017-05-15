@@ -1,7 +1,7 @@
 /* Brand styling
 -------------------------------------------------- */
 *, input, button {
-  font-family: 'Karla', sans-serif;
+  font-family: 'Work Sans', sans-serif;
 }
 
 h1 {
@@ -11,6 +11,20 @@ h1 {
 
 h1:first-letter {
   letter-spacing: -2px;
+}
+
+button.btn.btn-primary {
+  background-color: #ff4848;
+  border-color: #ff4848;
+}
+
+button.btn.btn-primary:hover {
+  background-color: #dc3c3c;
+  border-color: #dc3c3c;
+}
+
+.search-input:focus  {
+  border-color: #dc3c3c;
 }
 
 /* Sticky footer styles
