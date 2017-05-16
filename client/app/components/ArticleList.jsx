@@ -4,7 +4,7 @@ import Article from './Article.jsx';
 const ArticleList = ({ trend, storyPoint }) => {
   let articles;
 
-  if (storyPoint.hasOwnProperty('stories') && storyPoint.stories[0] === null) {
+  if (storyPoint.hasOwnProperty('stories') && storyPoint.stories.length === 0) {
     articles = (
       <div>
         <h6>No stories on this trend found for {storyPoint.formattedTime}.</h6>
@@ -14,9 +14,9 @@ const ArticleList = ({ trend, storyPoint }) => {
     articles = (
       <div className="row">
         <div className="col">
-          <div className="row mb-4">
+          <div className="row">
             <div className="col">
-              <h2 className="h4">
+              <h2 className="h4 mb-4">
                 <strong>Why</strong> did <strong className="text-lowercase">{trend}</strong> peak?
               </h2>
             </div>

@@ -7,20 +7,27 @@ const makeTimeline = (searchString, callback) => {
   queryTrend(searchString, (err, timeSeries) => {
     if (err) {
       callback(err, null);
+
     } else {
       const peaks = findPeaks(timeSeries);
 
-      getNews(searchString, peaks, (err, peakStories) => {
+      getNews(searchString, peaks, 'title', (err, peakStories) => {
         if (err) {
           callback(err, null);
+
+        } else if (peakStories[0].stories[0] === undefined) {
+          getNews(searchString, peaks, 'body', (err, peakStories) => {
+
+            if (err) {
+              callback(err, null);
+            } else {
+              const response = makeFinalData(timeSeries, peakStories, searchString);
+              callback(null, response);
+            }
+          });
+
         } else {
-          const timeline = makeFinalData(timeSeries, peakStories);
-
-          const response = {
-            timeline: timeline,
-            trend: searchString.slice(1, -1)
-          };
-
+          const response = makeFinalData(timeSeries, peakStories, searchString);
           callback(null, response);
         }
       });
