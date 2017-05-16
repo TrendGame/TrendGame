@@ -5,6 +5,7 @@ const cleanData = require('./utilities/cleanSearch');
 const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
+var worker = require('./workers/worker');
 
 const app = express();
 const IP = '127.0.0.1';
@@ -13,6 +14,7 @@ const PORT = process.env.PORT || 8080;
 app.use(express.static(__dirname + '/client/public'));
 app.use(bodyParser.json());
 app.use(morgan('tiny'));
+worker.worker(`http://${IP}:${PORT}/api/worker`);
 
 if (!module.parent) {
   app.listen(PORT, () => {
@@ -65,6 +67,10 @@ app.get('/api/history', (req, res) => {
       res.status(200).send(data);
     }
   });
+});
+
+app.get('/api/worker', (req, res) => {
+  res.send("Im awake!!");
 });
 
 app.use((req, res) => {
